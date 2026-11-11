@@ -1,0 +1,39 @@
+.score-card {
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.score-card.danger{
+    background: #FF4D47;
+}
+
+.score-card.warning{
+    background: #FFAE1F;
+}
+
+.score-card.success{
+    background: #13DEB9;
+}
+
+.score-card.info{
+    background: #00BBFF;
+}
+
+.score-card.primary{
+    background: #5D87FF;
+}
+
+.bg-shapes svg {
+    position: absolute;
+    pointer-events: none;
+}
+
+.shape-top {
+    top: -10px;
+    left: -10px;
+}
+
+.shape-bottom {
+    bottom: -20px;
+    right: 0;
+}

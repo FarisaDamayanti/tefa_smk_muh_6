@@ -1,0 +1,67 @@
+.select2-container {
+    vertical-align: middle;
+}
+.select2-container--default .select2-selection--single {
+    height: 42px;
+    min-height: 42px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 40px 0 14px;
+    box-shadow: none;
+}
+.select2-container--default
+    .select2-selection--single
+    .select2-selection__rendered {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    line-height: normal;
+    font-size: 14px;
+    color: #374151;
+}
+.select2-container--default
+    .select2-selection--single
+    .select2-selection__arrow {
+    height: 42px;
+    top: 0;
+    right: 12px;
+}
+.select2-dropdown {
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+.select2-results__option {
+    padding: 10px 14px;
+    font-size: 14px;
+}
+.select2-results__option--highlighted {
+    background-color: #6366f1 !important;
+    color: #fff;
+}
+.select2-results__option--selected {
+    background-color: #eef2ff;
+    color: #3730a3;
+}
+.classroom-card {
+    border: 1px solid #e5e7eb;
+}
+
+.classroom-card h5 {
+    font-size: 22px;
+}
+
+.classroom-card p {
+    font-size: 20px;
+    color: #111827;
+}
+
+.classroom-card__year,
+.classroom-card__students {
+    font-size: 14px;
+}

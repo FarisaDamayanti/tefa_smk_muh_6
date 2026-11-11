@@ -1,0 +1,70 @@
+    .exam-info-icon {
+            width: 26px;
+            height: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 26px;
+        }
+
+        .exam-info-icon svg {
+            width: 100% !important;
+            height: 100% !important;
+            display: block;
+        }
+
+        .exam-info-grid {
+            --left-col: 50%;
+            position: relative;
+            display: grid;
+            grid-template-columns: var(--left-col) 1fr;
+            column-gap: 24px;
+            row-gap: 18px;
+            align-items: start;
+        }
+
+        .exam-info-grid::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: var(--left-col);
+            width: 1px;
+            background: #d6dbe6;
+            transform: translateX(12px);
+        }
+
+        .exam-info-label-wrap {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            min-width: 0;
+            /* max-width: ; */
+        }
+
+        .exam-info-label {
+            line-height: 1.35;
+            word-break: break-word;
+            white-space: normal;
+            min-width: 0;
+        }
+
+        .exam-info-value {
+            font-weight: 600;
+            line-height: 1.35;
+            word-break: break-word;
+            white-space: normal;
+            min-width: 0;
+        }
+
+        @media (max-width: 576px) {
+            .exam-info-grid {
+                --left-col: 50%;
+                column-gap: 20px;
+                font-size: 12px;
+            }
+
+            .exam-info-grid::before {
+                transform: translateX(10px);
+            }
+        }

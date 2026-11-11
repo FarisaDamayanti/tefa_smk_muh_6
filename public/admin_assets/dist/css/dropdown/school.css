@@ -1,0 +1,111 @@
+/* =========================================================
+   Dropdown - School Overrides
+   Works with dropdown/style.css as base
+   ========================================================= */
+
+/* wrapper */
+.custom-dropdown {
+  position: relative;
+  width: 100%;
+}
+
+/* override base height & radius biar sama semua halaman */
+.dropdown-selected {
+  height: 44px;
+  border-radius: 12px;
+}
+
+/* hover (opsional, kalau mau beda dari style.css) */
+.dropdown-selected:hover {
+  border-color: #c5cbd3;
+}
+
+/* arrow size (biang kerok dulu kecil 7px -> sekarang fix) */
+.dropdown-arrow {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  display: block;
+  color: #6c757d;
+}
+
+/* tebelin garis arrow biar keliatan */
+.dropdown-arrow path {
+  stroke-width: 2.8;
+}
+
+/* rotate saat dropdown open (kalau style.css sudah ada, ini aman tetap sama) */
+.dropdown-selected.active .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+/* menu radius biar matching radius 12px */
+.dropdown-options {
+  border-radius: 0 0 12px 12px;
+}
+
+/* z-index lebih aman (biar ga ketutup card/table) */
+.dropdown-options.show {
+  z-index: 9999;
+}
+
+/* option selected lebih tegas */
+.dropdown-option.selected {
+  font-weight: 600;
+}
+
+/* =========================================================
+   Filter input (dipakai di halaman index/filter)
+   ========================================================= */
+.filter-input {
+  height: 44px;
+  border-radius: 12px;
+  padding: 10px 16px;
+  border: 1px solid #dee2e6;
+  box-shadow: none;
+}
+
+.filter-input:focus {
+  border-color: #c5cbd3;
+  box-shadow: none;
+}
+
+/* =========================================================
+   Safety: kadang parent kebanyakan overflow hidden
+   (kalau tidak perlu, aman tetap ada)
+   ========================================================= */
+.edit-section,
+.split-container,
+.section-body,
+.card,
+.card-body {
+  overflow: visible;
+}
+
+
+/* Paksa dropdown button benar-benar space-between */
+.custom-dropdown .dropdown-selected{
+  justify-content: space-between !important;
+  padding: 10px 16px !important;   /* override style.css yang pakai padding-right 40px */
+}
+
+/* Content jangan maksa width 100% */
+.custom-dropdown .selected-content{
+  flex: 1 1 auto !important;
+  width: auto !important;
+  min-width: 0; /* penting untuk ellipsis */
+}
+
+/* Teks biar kalau panjang gak dorong arrow */
+.custom-dropdown .selected-text{
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Arrow selalu ke ujung kanan */
+.custom-dropdown .dropdown-arrow{
+  margin-left: auto !important;
+  flex-shrink: 0;
+}

@@ -1,0 +1,118 @@
+/* ===== PAGE WRAPPER ===== */
+.student-subjects-page {
+    min-height: 100vh;
+}
+
+/* ===== SELECT2 ===== */
+.select2-container {
+    vertical-align: middle;
+}
+
+.select2-container--default .select2-selection--single {
+    height: 42px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    padding: 0 40px 0 14px;
+}
+
+.select2-selection__rendered {
+    font-size: 14px;
+    color: #374151;
+}
+
+.select2-selection__arrow {
+    height: 42px;
+    right: 12px;
+}
+
+/* ===== CARD ===== */
+.student-subjects-page .classroom-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    transition: all 0.2s ease;
+}
+
+.student-subjects-page .classroom-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.student-subjects-page .classroom-card h5 {
+    font-size: 20px;
+}
+
+.student-subjects-page .classroom-card p {
+    font-size: 15px;
+    color: #111827;
+}
+
+.classroom-card__year,
+.classroom-card__students {
+    font-size: 13px;
+}
+
+/* =========================
+   SELECT2 CLEAN STYLE
+========================= */
+
+.student-subjects-page .select2-container {
+    width: 200px !important;
+    font-size: 14px;
+}
+
+.student-subjects-page
+.select2-container--default
+.select2-selection--single {
+    height: 42px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 36px 0 14px;
+    box-shadow: none;
+}
+
+.student-subjects-page
+.select2-container--default
+.select2-selection--single
+.select2-selection__rendered {
+    padding: 0;
+    margin: 0;
+    line-height: normal;
+    color: #374151;
+}
+
+.student-subjects-page
+.select2-container--default
+.select2-selection--single
+.select2-selection__arrow {
+    height: 42px;
+    right: 10px;
+}
+
+.student-subjects-page .select2-dropdown {
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.student-subjects-page .select2-results__option {
+    padding: 10px 14px;
+    font-size: 14px;
+}
+
+.student-subjects-page
+.select2-results__option--highlighted {
+    background-color: #6366f1 !important;
+    color: #fff;
+}
+
+.student-subjects-page
+.select2-results__option--selected {
+    background-color: #eef2ff;
+    color: #3730a3;
+}
+

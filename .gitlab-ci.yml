@@ -1,0 +1,28 @@
+stages:
+  - deploy
+
+deploy:
+  stage: deploy
+  tags:
+    - runner-development-shell
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "e-learning-and-exam-theory"'
+  script:
+    - |
+      sudo -u www rsync -az --no-o --no-g \
+        --exclude=.git \
+        --exclude=.env \
+        --exclude=node_modules \
+        --exclude=vendor \
+        --exclude=storage \
+        --exclude=proxy_cache_dir \
+        --exclude=.user.ini \
+        ./ "$DEPLOY_DIR_LEARNING/"
+
+    - sudo -u www bash -lc "
+        cd '$DEPLOY_DIR_LEARNING' &&
+        composer install --no-interaction --prefer-dist --optimize-autoloader &&
+        php artisan migrate --force &&
+        php artisan optimize &&
+        php artisan storage:link
+      "

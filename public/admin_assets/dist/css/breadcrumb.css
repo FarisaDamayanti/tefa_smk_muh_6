@@ -1,0 +1,64 @@
+.header-gradient {
+    background: linear-gradient(
+        180deg,
+        rgba(81, 182, 255, 1) 0%,
+        rgba(79, 124, 255, 1) 100%
+    );
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    color: #ffffff;
+}
+
+.header-gradient h1,
+.header-gradient h2,
+.header-gradient h3,
+.header-gradient h4,
+.header-gradient h5,
+.header-gradient h6,
+.header-gradient p,
+.header-gradient span,
+.header-gradient a {
+    color: #ffffff;
+}
+
+.header-gradient .breadcrumb {
+    background: transparent;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.header-gradient .breadcrumb-item a {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.header-gradient .breadcrumb-item a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.header-gradient img {
+    max-height: 140px;
+    object-fit: contain;
+}
+
+@media (max-width: 576px) {
+    .header-gradient {
+        border-radius: 10px;
+    }
+
+    .header-gradient img {
+        max-height: 110px;
+    }
+}
+
+.breadcrumb-trail-img {
+    width: 65px;
+    height: auto;
+}
+@media (min-width: 768px) {
+    .breadcrumb-trail-img {
+        width: auto;
+        max-width: 100%;
+    }
+}

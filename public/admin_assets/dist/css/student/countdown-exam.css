@@ -1,0 +1,53 @@
+.exam-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgb(0, 36, 74);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    text-align: center;
+}
+
+.exam-overlay-content h1 {
+    font-size: 100px;
+    font-weight: bold;
+    color: #ffffff;
+    animation: zoomInOut 1.6s ease-in-out infinite;
+}
+
+.exam-overlay-content h3 {
+    animation: fadeInOut 3s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes zoomInOut {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+}

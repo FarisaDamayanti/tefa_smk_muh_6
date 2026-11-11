@@ -1,0 +1,46 @@
+# Environment
+.env
+
+# Dependencies
+/vendor
+/node_modules
+
+# Laravel runtime
+/storage
+
+# Cache / runtime dirs
+/proxy_cache_dir
+
+# User / server config
+.user.ini
+
+# Logs
+*.log
+
+# OS / editor junk
+Thumbs.db
+.DS_Store
+/.vscode
+/.idea
+/.fleet
+/.qodo
+
+# Cache
+/bootstrap/cache/*
+/bootstrap/cache
+
+# Unrelated
+Homestead.json
+Homestead.yaml
+auth.json
+
+# Composer
+composer.phar
+
+# PHPUnit
+.phpunit.result.cache
+
+# Build artifacts
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

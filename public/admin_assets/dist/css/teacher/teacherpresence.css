@@ -1,0 +1,215 @@
+.presensi-card {
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+}
+
+.presensi-title {
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+/* Table */
+.presensi-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+    width: 100%;
+    min-width: 900px;
+}
+
+.presensi-table thead th {
+    background: rgba(79, 124, 255, 1);
+    color: #fff;
+    font-weight: 500;
+    border: none;
+    padding: 14px;
+}
+
+.presensi-table th:nth-child(1),
+.presensi-table td:nth-child(1) {
+    width: 60px;
+    text-align: center;
+    border-left: 14px;
+}
+
+.presensi-table th:nth-child(2),
+.presensi-table td:nth-child(2) {
+    width: 35%;
+    text-align: center;
+}
+
+.presensi-table th:nth-child(3),
+.presensi-table td:nth-child(3) {
+    width: 120px;
+    text-align: center;
+}
+
+.presensi-table th:nth-child(4),
+.presensi-table td:nth-child(4) {
+    width: 360px;
+    text-align: center;
+}
+
+.presensi-table thead th:first-child {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+.presensi-table thead th:last-child {
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.presensi-table tbody td {
+    padding: 14px;
+    border-bottom: 1px solid #e5e7eb;
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+.presensi-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.radio-group {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    align-items: center;
+}
+
+.radio-group label {
+    justify-content: flex-start;
+    white-space: nowrap;
+}
+
+.radio-group input[type="radio"] {
+    accent-color: #4f7cff;
+}
+
+.hadir-semua {
+    font-size: 12px;
+    font-weight: 400;
+    margin-left: 12px;
+    cursor: pointer;
+}
+
+.hadir-semua input {
+    margin-right: 4px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.presensi-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.header-gradient {
+    background: linear-gradient(
+        180deg,
+        rgba(81, 182, 255, 1) 0%,
+        rgba(79, 124, 255, 1) 100%
+    );
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    color: #ffffff;
+}
+
+.header-gradient h1,
+.header-gradient h2,
+.header-gradient h3,
+.header-gradient h4,
+.header-gradient h5,
+.header-gradient h6,
+.header-gradient p,
+.header-gradient span,
+.header-gradient a {
+    color: #ffffff;
+}
+
+.header-gradient .breadcrumb {
+    background: transparent;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.header-gradient .breadcrumb-item a {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.header-gradient .breadcrumb-item a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.header-gradient img {
+    max-height: 140px;
+    object-fit: contain;
+}
+
+@media (max-width: 576px) {
+    .header-gradient {
+        border-radius: 10px;
+    }
+
+    .header-gradient img {
+        max-height: 110px;
+    }
+}
+
+@media (max-width: 768px) {
+    .presensi-table th:nth-child(2),
+    .presensi-table td:nth-child(2) {
+        text-align: left;
+    }
+
+    .radio-group {
+        gap: 8px;
+    }
+
+    .presensi-table thead th {
+        white-space: nowrap;
+        font-size: 13px;
+    }
+
+    .presensi-table tbody td {
+        white-space: nowrap;
+        font-size: 13px;
+    }
+}
+
+.custom-cta-btn {
+    padding: 7px 35px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border: 1px solid #6c757d;
+    color: #6c757d;
+    background-color: transparent;
+}
+
+.custom-cta-btn:hover {
+    background-color: #6c757d;
+    color: #ffffff;
+    border-color: #6c757d;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(108, 117, 125, 0.2);
+}
+
+.custom-cta-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(108, 117, 125, 0.2);
+}
+
+.custom-cta-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(108, 117, 125, 0.25);
+}

@@ -1,0 +1,184 @@
+.option-item {
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.option-item:hover {
+    background-color: #e7f1ff;
+}
+
+.option-item input:checked+p+span,
+.option-item input:checked+p {
+    font-weight: 600;
+}
+
+.option-item:has(input:checked) {
+    background-color: #ffffff !important;
+    color: #5D87FF;
+    border: 0.7px solid #5D87FF;
+    transition: .2s ease-in-out
+}
+
+#timer {
+    display: inline-block;
+    min-width: 70px;
+    text-align: center;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+}
+
+.card-body .row.align-items-center.gap-2.px-2 {
+    flex-wrap: nowrap;
+}
+
+.card-body .badge {
+    align-items: center;
+}
+
+/* =============================================
+   MATCHING - NODE STATES
+   ============================================= */
+
+/* Node default */
+.js-matching-board .js-node {
+    border: 2px solid transparent;
+    transition: border-color 0.15s, background-color 0.15s;
+}
+
+/* Node saat diklik */
+.js-matching-board .js-node.border.border-1.border-primary {
+    border: 2px solid #5D87FF !important;
+    background-color: #dce8ff !important;
+}
+
+/* Node saat punya pasangan */
+.js-matching-board .js-node.is-connected {
+    border: 2px solid #5D87FF !important;
+    background-color: #dce8ff !important;
+}
+
+/* Anchor default: tidak terlihat */
+.js-anchor {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: 2px solid transparent !important;
+    transition: background 0.15s, box-shadow 0.15s, border-color 0.15s !important;
+}
+
+/* Anchor saat dipencet */
+.js-matching-board .js-anchor.is-selected {
+    background: #5D87FF !important;
+    box-shadow: 0 0 0 2px #5D87FF !important;
+    border: 2px solid white !important;
+}
+
+/* Anchor saat punya pasangan */
+.js-matching-board .js-anchor.is-connected {
+    background: #5D87FF !important;
+    box-shadow: 0 0 0 2px #5D87FF !important;
+    border: 2px solid white !important;
+}
+
+/* SVG overflow visible */
+.js-matching-board {
+    overflow: visible !important;
+}
+
+.js-matching-board .row.g-4 {
+    overflow: visible !important;
+}
+
+.js-matching-board .js-matching-svg {
+    overflow: visible !important;
+}
+
+/* =============================================
+   MATCHING - MOBILE LAYOUT
+   ============================================= */
+@media (max-width: 768px) {
+
+    .js-matching-board {
+        position: relative !important;
+    }
+
+    .js-matching-board .row.g-4 {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        align-items: flex-start !important;
+        gap: 0 !important;
+        position: relative;
+    }
+
+    .js-matching-board .col-12.col-md-2 {
+        display: none !important;
+    }
+
+    .js-matching-board .col-12.col-md-5 {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+        width: 50% !important;
+        padding: 8px 4px !important;
+        box-sizing: border-box !important;
+    }
+
+    .js-matching-board .js-node {
+        font-size: 11px !important;
+        padding: 8px 18px 8px 8px !important;
+        min-height: unset !important;
+        height: auto !important;
+        border-radius: 10px !important;
+        margin-bottom: 8px !important;
+        position: relative !important;
+        word-break: break-word !important;
+        align-self: flex-start !important;
+        display: inline-flex !important;
+        width: 100% !important;
+        align-items: center !important;
+    }
+
+    .js-matching-board .col-12.col-md-5 + .col-12.col-md-5 .js-node {
+        padding: 8px 8px 8px 18px !important;
+        overflow: hidden !important;
+    }
+
+    .js-matching-board .col-12.col-md-5 + .col-12.col-md-5 .js-node img {
+        max-width: 100% !important;
+        max-height: 60px !important;
+        width: auto !important;
+        height: auto !important;
+        object-fit: contain !important;
+        display: block !important;
+    }
+
+    .js-matching-board .col-12.col-md-5:first-of-type .js-anchor {
+        right: -6px !important;
+        left: auto !important;
+        width: 12px !important;
+        height: 12px !important;
+    }
+
+    .js-matching-board .col-12.col-md-5 + .col-12.col-md-5 .js-anchor {
+        left: -6px !important;
+        right: auto !important;
+        width: 12px !important;
+        height: 12px !important;
+    }
+
+    .js-matching-board .js-anchor.is-selected,
+    .js-matching-board .js-anchor.is-connected {
+        background: #5D87FF !important;
+        box-shadow: 0 0 0 2px #5D87FF !important;
+        border: 2px solid white !important;
+    }
+
+    .js-matching-board .js-matching-svg {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        pointer-events: none !important;
+        z-index: 1 !important;
+    }
+}
