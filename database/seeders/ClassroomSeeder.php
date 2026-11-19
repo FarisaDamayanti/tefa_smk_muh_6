@@ -19,12 +19,12 @@ class ClassroomSeeder extends Seeder
     {
         $employee = Employee::first();
         $student = Student::first();
-        
-        $levelClass = LevelClass::where('name', 'Kelas 11')->first();
+
+        $levelClass = LevelClass::where('name', '11')->first();
         $schoolYear = SchoolYear::where('active', 1)->first();
 
         $classroom = Classroom::create([
-            'name' => '11 Rpl 1',
+            'name' => 'Rpl 1',
             'employee_id' => $employee->id,
             'school_year_id' => $schoolYear->id,
             'level_class_id' => $levelClass->id,
