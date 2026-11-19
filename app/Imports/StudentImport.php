@@ -86,7 +86,7 @@ class StudentImport implements ToModel, WithValidation, SkipsOnFailure
             '0' => 'required|max:255',       // nama
             '1' => 'required|email|unique:users,email',  // email
             '2' => 'required|max:10',         // nisn
-            '3' => 'required|numeric',          // tanggal lahir
+            '3' => 'required',          // tanggal lahir
             '4' => 'required|max:255',        // tempat lahir
             '5' => 'required|in:Laki-laki,Perempuan',        // jenis kelamin
             '6' => 'required|max:16',         // NIK
@@ -109,8 +109,7 @@ class StudentImport implements ToModel, WithValidation, SkipsOnFailure
             '1.unique' => 'Email sudah digunakan',
             '2.required' => 'NISN wajib diisi',
             '2.max' => 'NISN tidak boleh lebih dari :max karakter',
-            '3.required' => 'Tanggal lahir wajib diisi',
-            '3.numeric' => 'Format tanggal lahir tidak valid',
+            '3.required' => 'Tanggal lahir wajib diisi',    
             '4.required' => 'Tempat lahir wajib diisi',
             '4.max' => 'Tempat lahir tidak boleh lebih dari :max karakter',
             '5.required' => 'Jenis kelamin wajib diisi',
