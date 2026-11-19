@@ -24,11 +24,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if (auth()->user()->roles->pluck('name')[0] == 'school') {
+        $role = auth()->user()->roles->pluck('name')->first();
+
+        if ($role == 'school') {
             return to_route('school.index');
-        } else if (auth()->user()->roles->pluck('name')[0] == 'student') {
+        } elseif ($role == 'student') {
             return to_route('student.dashboard');
-        } else if (auth()->user()->roles->pluck('name')[0] == 'teacher') {
+        } elseif ($role == 'teacher') {
             return to_route('teacher.dashboard');
         } else {
             return to_route('beranda');

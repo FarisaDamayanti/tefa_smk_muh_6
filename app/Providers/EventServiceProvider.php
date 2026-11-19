@@ -9,6 +9,7 @@ use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
 use Spatie\Permission\Models\Permission;
+use Illuminate\Support\Facades\Schema;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -28,8 +29,17 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $school = School::first();
-        $permission_feedback = Permission::where('name', 'active_feedback')->first();
+        $school = null;
+        $permission_feedback = null;
+
+        if (Schema::hasTable('schools')) {
+            $school = School::first();
+        }
+
+        if (Schema::hasTable('permissions')) {
+            $permission_feedback = Permission::where('name', 'active_feedback')->first();
+        }
+
         view()->share('school', $school);
         view()->share('permission_feedback', $permission_feedback);
     }

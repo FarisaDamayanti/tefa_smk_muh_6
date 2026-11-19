@@ -27,7 +27,7 @@ class StudentSeeder extends Seeder
             'religion_id' => $religion->id,
             'gender' => GenderEnum::FEMALE->value,
             'birth_date' => now(),
-            'birth_place' => 'Malanag',
+            'birth_place' => 'Malang',
             'address' => 'Permata Regency',
             'number_kk' => '123456789101234',
             'number_akta' => '1234567891012',

@@ -7,8 +7,8 @@
                 closeButton: true,
                 progressBar: true,
                 positionClass: 'toast-top-right',
-                timeOut: 3000,
-                extendedTimeOut: 1000,
+                timeOut: 6000,
+                extendedTimeOut: 2000,
                 showDuration: 300,
                 hideDuration: 300,
                 showMethod: 'fadeIn',
@@ -19,6 +19,13 @@
         function toast(type, message) {
             if (!window.toastr) return;
             toastr[type](message);
+        }
+        const savedMessage = sessionStorage.getItem('rolling_success');
+        if (savedMessage) {
+            setTimeout(function() {
+                toast('success', savedMessage);
+                sessionStorage.removeItem('rolling_success');
+            }, 500);
         }
 
         if ($.fn.select2) {
@@ -114,20 +121,37 @@
                         'Accept': 'application/json',
                         'X-CSRF-TOKEN': csrfToken,
                     },
-                    success: function() {
-                        toast('success', 'Siswa berhasil di-rolling ke kelas.');
+                    
+                    success: function(response) {
+                    const data = response.data || {};
 
-                        $('#select2').val(null).trigger('change');
+                    const addedCount = data.added_count || 0;
+                    const skippedCount = data.skipped_count || 0;
 
-                        const modalEl = document.getElementById('modal-rolling-student');
-                        if (window.bootstrap?.Modal) {
-                            const modal = bootstrap.Modal.getInstance(modalEl);
-                            if (modal) modal.hide();
-                        } else {
-                            $('#modal-rolling-student').modal('hide');
-                        }
+                    let message = `${addedCount} siswa berhasil ditambahkan`;
 
-                        location.reload();
+                    if (skippedCount > 0) {
+                        message += `, ${skippedCount} siswa dilewati karena sudah terdaftar.`;
+                    } else {
+                        message += '.';
+                    }
+
+                    // Simpan pesan agar tidak hilang saat halaman di-refresh
+                    sessionStorage.setItem('rolling_success', message);
+
+                    $('#select2').val(null).trigger('change');
+
+                    const modalEl = document.getElementById('modal-rolling-student');
+
+                    if (window.bootstrap?.Modal) {
+                        const modal = bootstrap.Modal.getInstance(modalEl);
+                        if (modal) modal.hide();
+                    } else {
+                        $('#modal-rolling-student').modal('hide');
+                    }
+
+                    location.reload();
+
                     },
                     error: function(xhr) {
                         const msg =
