@@ -3,7 +3,6 @@
 namespace App\Http\Requests\School;
 
 use App\Http\Requests\ApiRequest;
-use Illuminate\Foundation\Http\FormRequest;
 
 class StoreClassroomStudentRequest extends ApiRequest
 {
@@ -24,7 +23,7 @@ class StoreClassroomStudentRequest extends ApiRequest
     {
         return [
             'student_ids' => 'required|array|min:1',
-            'student_ids.*' => 'exists:students,id'
+            'student_ids.*' => 'required|distinct|exists:students,id',
         ];
     }
 
