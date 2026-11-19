@@ -152,26 +152,44 @@ class ClassroomStudentController extends Controller
         }
     }
 
+    
     public function import(ImportStudentRequest $request)
     {
         $file = $request->file('file');
 
         DB::beginTransaction();
+
         try {
             $import = new ClassStudentImport;
+
             Excel::import($import, $file);
+
+            // Periksa apakah ada kesalahan pada data Excel
             if (!empty($import->errors)) {
-                return back()->with('error_rows', $import->errors);
+                DB::rollBack();
+
+                return redirect()->back()
+                    ->with('error_rows', $import->errors)
+                    ->with('error', 'Import dibatalkan. Periksa kembali data siswa.');
             }
+
+            // Simpan seluruh perubahan jika berhasil
             DB::commit();
-            return to_route('school.students.index')->with('success', "Berhasil Mengimport Data!");
+
+            return to_route('school.students.index')
+                ->with('success', 'Berhasil mengimport data siswa!');
+
         } catch (\Throwable $th) {
             DB::rollBack();
-            if ($file->getClientOriginalExtension() != 'xlsx') {
-                return redirect()->back()->with('error', 'Format file salah');
-            } else {
-                return redirect()->back()->with('error', 'Terjadi kesalahan: '.$th->getMessage());
+
+            if (!$file || strtolower($file->getClientOriginalExtension()) !== 'xlsx') {
+                return redirect()->back()
+                    ->with('error', 'Format file salah. Gunakan file Excel .xlsx');
             }
+
+            return redirect()->back()
+                ->with('error', 'Terjadi kesalahan saat import: ' . $th->getMessage());
         }
     }
+
 }
