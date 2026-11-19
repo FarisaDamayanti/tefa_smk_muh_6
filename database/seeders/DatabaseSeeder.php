@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
             ClassroomStudentSeeder::class,
             // AttendanceSeeder::class,
             ExtracurricularSeeder::class,
-            AttendanceRuleSeeder::class,
+            // AttendanceRuleSeeder::class,
             SubjectSeeder::class,
             SchoolPointSeeder::class,
             MaxLateSeeder::class,
