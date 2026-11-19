@@ -30,6 +30,8 @@ class HomeController extends Controller
             return to_route('student.dashboard');
         } else if (auth()->user()->roles->pluck('name')[0] == 'teacher') {
             return to_route('teacher.dashboard');
+        } else if (auth()->user()->roles->pluck('name')[0] == 'staff') {
+            return to_route('employee.dashboard');
         } else {
             return to_route('beranda');
         }
